@@ -10,9 +10,11 @@ namespace SkillsTrack.Core.Models
     {
         public string Id { get; set; } = Guid.NewGuid().ToString();
 
-        public string Category { get; set; }
+        public Category Category { get; set; } = Category.NET;
 
         public string Description { get; set; }
+
+        public DateTime Date { get; set; }
 
     }
 }

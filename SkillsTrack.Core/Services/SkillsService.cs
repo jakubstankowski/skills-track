@@ -12,7 +12,7 @@ namespace SkillsTrack.Core.Services
     {
         readonly List<Skills> skills = new()
         {
-            new Skills() { Category = "C#", Description = "Blazor basic architecture" }
+            new Skills() { Category = Category.NET, Description = "Blazor basic architecture", Date = new System.DateTime(2021, 12, 17) }
         };
 
         public IEnumerable<Skills> GetAllSkills()
