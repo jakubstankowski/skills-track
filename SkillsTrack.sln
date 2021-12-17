@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SkillsTrack.Client", "Skill
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillsTrack.API", "SkillsTrack.API\SkillsTrack.API.csproj", "{009EA14A-C65C-4157-A9F9-FF23F646CD9A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillsTrack.Core", "SkillsTrack.Core\SkillsTrack.Core.csproj", "{0B531B80-08BC-458A-A22E-060C27D65934}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{009EA14A-C65C-4157-A9F9-FF23F646CD9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{009EA14A-C65C-4157-A9F9-FF23F646CD9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{009EA14A-C65C-4157-A9F9-FF23F646CD9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B531B80-08BC-458A-A22E-060C27D65934}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B531B80-08BC-458A-A22E-060C27D65934}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B531B80-08BC-458A-A22E-060C27D65934}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B531B80-08BC-458A-A22E-060C27D65934}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
