@@ -9,7 +9,7 @@ namespace SkillsTrack.Core.Interfaces
 {
     public interface ISkillsService
     {
-        public IEnumerable<Skills> GetAllSkills();
+        public IEnumerable<Skill> GetAllSkills();
 
     }
 }

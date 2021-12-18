@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SkillsTrack.Core.Models
 {
-    public class Skills
+    public class Skill
     {
         public string Id { get; set; } = Guid.NewGuid().ToString();
 

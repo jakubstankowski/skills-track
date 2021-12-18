@@ -10,12 +10,12 @@ namespace SkillsTrack.Core.Services
 {
     public class SkillsService : ISkillsService
     {
-        readonly List<Skills> skills = new()
+        readonly List<Skill> skills = new()
         {
-            new Skills() { Category = Category.NET, Description = "Blazor basic architecture", Date = new System.DateTime(2021, 12, 17) }
+            new Skill() { Category = Category.NET, Description = "Blazor basic architecture", Date = new System.DateTime(2021, 12, 17) }
         };
 
-        public IEnumerable<Skills> GetAllSkills()
+        public IEnumerable<Skill> GetAllSkills()
         {
             return skills;
         }
