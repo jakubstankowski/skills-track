@@ -1,7 +1,52 @@
 ﻿@page "/skills"
+@inject ISkillsService SkillsService
 
 <h3>Skills</h3>
 
-@code {
+@if (SkillsService.Skills.Count == 0)
+{
+                                            <span>Loading Skills...</span>
+}
+else
+{
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Category</th>
+                                                        <th>Description</th>
+                                                        <th>Date</th>
+                                                        <th></th>
+                                                        <th></th>
+                                                        <th></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+            @foreach (var skill in SkillsService.Skills)
+            {
+                                                        <tr>
+                                                                                                    <td>@skill.Category</td>                                                             
+                                                                                                      <td>@skill.Description</td>
+                                                                                                     <td>@skill.Date</td>
+                                                                                                    <td>
+                                                                                                        <button class="btn btn-primary">Show</button>
+                                                                                                    </td>
+                                                                                                    <td>
+                                                                                                        <button class="btn btn-primary">Edit</button>
+                                                                                                    </td>
+                                                                                                    <td>
+                                                                                                        <button class="btn btn-primary">Delete</button>
+                                                                                                    </td>
+                                                         </tr>
+            }
+                                                </tbody>
+                                            </table>
+}
 
+
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        await SkillsService.GetSkillsAsync();
+    }
 }
