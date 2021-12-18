@@ -5,6 +5,6 @@ namespace SkillsTrack.Client.Interfaces
 {
     public interface ISkillsService
     {
-        Task<IEnumerable<Skill>> GetSkillsAsync();
+        Task<List<Skill>> GetSkillsAsync();
     }
 }

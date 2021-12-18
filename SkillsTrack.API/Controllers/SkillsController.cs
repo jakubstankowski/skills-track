@@ -1,6 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using SkillsTrack.Core.Interfaces;
+﻿using Microsoft.AspNetCore.Mvc;
+using SkillsTrack.Core.Models;
 
 namespace SkillsTrack.API.Controllers
 {
@@ -8,18 +7,15 @@ namespace SkillsTrack.API.Controllers
     [ApiController]
     public class SkillsController : ControllerBase
     {
-        private readonly ISkillsService _skillsService;
 
-        public SkillsController(ISkillsService skillsService)
+        readonly List<Skill> skills = new()
         {
-            _skillsService = skillsService;
-        }
+            new Skill() { Category = Category.NET, Description = "Blazor basic architecture", Date = new System.DateTime(2021, 12, 17) }
+        };
 
         [HttpGet]
         public IActionResult GetAllSkills()
         {
-            var skills = _skillsService.GetAllSkills();
-
             return Ok(skills);
         }
 

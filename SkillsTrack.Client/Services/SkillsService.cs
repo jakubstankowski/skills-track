@@ -1,13 +1,25 @@
 ﻿using SkillsTrack.Client.Interfaces;
 using SkillsTrack.Core.Models;
+using System.Net.Http.Json;
+
 
 namespace SkillsTrack.Client.Services
 {
     public class SkillsService : ISkillsService
     {
-        public Task<IEnumerable<Skill>> GetSkillsAsync()
+        private readonly HttpClient _httpClient;
+
+        public SkillsService(HttpClient httpClient)
         {
-            throw new NotImplementedException();
+            _httpClient = httpClient;
+        }
+
+        public List<Skill> Skills { get; set; } = new List<Skill>();
+
+        public async Task<List<Skill>> GetSkillsAsync()
+        {
+            Skills = await _httpClient.GetFromJsonAsync<Skill>("api/skills");
+            return Skills;
         }
     }
 }
