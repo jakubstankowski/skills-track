@@ -18,7 +18,7 @@ namespace SkillsTrack.Client.Services
 
         public async Task<List<Skill>> GetSkillsAsync()
         {
-            Skills = await _httpClient.GetFromJsonAsync<List<Skill>>("https://localhost:7292/api/skills");
+            Skills = await _httpClient.GetFromJsonAsync<List<Skill>>("api/skills");
             return Skills;
         }
     }
