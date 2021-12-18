@@ -10,7 +10,9 @@ namespace SkillsTrack.API.Controllers
 
         readonly List<Skill> skills = new()
         {
-            new Skill() { Category = Category.NET, Description = "Blazor basic architecture", Date = new System.DateTime(2021, 12, 17) }
+            new Skill() { Category = Category.NET, Description = "Blazor basic architecture", Date = new System.DateTime(2021, 12, 15) },
+            new Skill() { Category = Category.JAVASCRIPT, Description = "Javascript arrow function", Date = new System.DateTime(2021, 12, 16) },
+            new Skill() { Category = Category.HTML, Description = "Basic of semantic HTML", Date = new System.DateTime(2021, 12, 17) }
         };
 
         [HttpGet]
