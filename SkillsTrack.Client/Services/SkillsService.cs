@@ -16,6 +16,12 @@ namespace SkillsTrack.Client.Services
 
         public List<Skill> Skills { get; set; } = new List<Skill>();
 
+        public async Task<List<Skill>> CreateSkillAsync(Skill skill)
+        {
+            var result = await _httpClient.PostAsJsonAsync<Skill>($"api/skills", skill);
+            return Skills;
+        }
+
         public async Task<List<Skill>> GetSkillsAsync()
         {
             Skills = await _httpClient.GetFromJsonAsync<List<Skill>>("api/skills");

@@ -8,5 +8,7 @@ namespace SkillsTrack.Client.Interfaces
         List<Skill> Skills { get; set; }
 
         Task<List<Skill>> GetSkillsAsync();
+
+        Task<List<Skill>> CreateSkillAsync(Skill skill);
     }
 }
