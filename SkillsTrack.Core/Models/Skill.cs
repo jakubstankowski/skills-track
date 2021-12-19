@@ -14,7 +14,7 @@ namespace SkillsTrack.Core.Models
 
         public string Description { get; set; }
 
-        public DateTime Date { get; set; }
+        public DateTimeOffset Date { get; set; } = DateTimeOffset.Now;
 
     }
 }
