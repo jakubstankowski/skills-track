@@ -21,5 +21,12 @@ namespace SkillsTrack.API.Controllers
             return Ok(skills);
         }
 
+        [HttpPost]
+        public IActionResult CreateSkill(Skill skill)
+        {
+            skills.Add(skill);
+
+            return Ok(skills);
+        }
     }
 }

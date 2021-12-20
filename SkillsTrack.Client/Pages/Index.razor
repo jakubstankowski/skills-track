@@ -31,35 +31,35 @@
 
 @if (SkillsService.Skills.Count == 0)
 {
-                                                                   <span>Loading Skills...</span>
+                                                                           <span>Loading Skills...</span>
 }
 else
 {
-                                                                             <table class="table">
-                                                                                 <thead>
-                                                                                       <tr>
-                                                                                          <th>Category</th>
-                                                                                          <th>Description</th>
-                                                                                         <th>Date</th>
-                                                                                           <th></th>
-                                                                                        </tr>
-                                                                                  </thead>
-                                                                             <tbody>
+                                                                                     <table class="table">
+                                                                                         <thead>
+                                                                                               <tr>
+                                                                                                  <th>Category</th>
+                                                                                                  <th>Description</th>
+                                                                                                 <th>Date</th>
+                                                                                                   <th></th>
+                                                                                                </tr>
+                                                                                          </thead>
+                                                                                     <tbody>
             @foreach (var skill in SkillsService.Skills)
             {
-                                                                                                                                                                                       <tr>
-                                                                                                                                                                                                                                                                   <td>@skill.Category</td>                                                             
-                                                                                                                                                                                                                                                                   <td>@skill.Description</td>
-                                                                                                                                                                                                                                                                   <td>@skill.Date</td>
+                                                                                                                                                                                                       <tr>
+                                                                                                                                                                                                                                                                                   <td>@skill.Category</td>                                                             
+                                                                                                                                                                                                                                                                                   <td>@skill.Description</td>
+                                                                                                                                                                                                                                                                                   <td>@skill.Date</td>
 
 
-                                                                                                                                                                                    <td>
-                                                                                                                                                                                                                                                                                                                <button class="btn btn-primary">Delete</button>
-                                                                                                                                                                                                                                                                                                            </td>
-                                                                                                                                                                                                                                                                 </tr>
+                                                                                                                                                                                                    <td>
+                                                                                                                                                                                                                                                                                                                                <button class="btn btn-primary">Delete</button>
+                                                                                                                                                                                                                                                                                                                            </td>
+                                                                                                                                                                                                                                                                                 </tr>
             }
-                                                                                                                                                    </tbody>
-                                                                                                                                                </table>
+                                                                                                                                                            </tbody>
+                                                                                                                                                        </table>
 }
 
 
@@ -76,5 +76,6 @@ else
     async void HandleSubmit()
     {
         await JSRuntime.InvokeVoidAsync("console.log", Skill);
+        await SkillsService.CreateSkillAsync(Skill);
     }
 }
