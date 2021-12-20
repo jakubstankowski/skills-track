@@ -7,65 +7,59 @@
 <h3>Add new learnned skill</h3>
 
 <EditForm Model="Skill" OnSubmit="HandleSubmit">
-    @*<div class="form-group">
-                        <label>Description</label>
-                        <InputText @bind-Value="Skill.Description" class="form-control"></InputText>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>*@
-    <div class="form-row">
-        <div class="col-lg-3 col-sm-6 mb-2">
-            <label>Description</label>
-            <InputText @bind-Value="Skill.Description" class="form-control"></InputText>
-        </div>
-        <div class="col-lg-3 col-sm-6 mb-2">
-            <label>Description</label>
-            <InputText @bind-Value="Skill.Description" class="form-control"></InputText>
-        </div>
-        <div class="col-lg-3 col-sm-6 mb-2">
-            <label>Description</label>
-            <InputText @bind-Value="Skill.Description" class="form-control"></InputText>
-        </div>
-        <div class="col-lg-3 col-sm-6 mb-2">
-                <button type="submit" class="btn btn-primary w-100">
-                    Add Skill
-                </button>
-        </div>
-    </div>
+       <div class="row">
+         <div class="col-md-3">
+                    <InputSelect @bind-Value="Skill.Category" class="form-select">
+                       <option selected value="NET">.NET</option>
+                       <option value="JAVASCRIPT">Javascript</option>
+                       <option value="HTML">HTML</option>
+                    </InputSelect>
+          </div>
+           <div class="col-md-3">
+                    <InputDate @bind-Value="Skill.Date" class="form-select"> </InputDate>
+          </div>
+         <div class="col-md-6">
+            <div class="input-group mb-3">
+            <InputText @bind-Value="Skill.Description" class="form-control" placeholder="Description"></InputText>
+               <button class="btn btn-primary" type="submit" id="button-addon2">Add New Skill</button>
+            </div>
+         </div>
+      </div>
 </EditForm>
 
 <h3>Skills list</h3>
 
 @if (SkillsService.Skills.Count == 0)
 {
-                           <span>Loading Skills...</span>
+                                                                   <span>Loading Skills...</span>
 }
 else
 {
-                                     <table class="table">
-                                         <thead>
-                                               <tr>
-                                                  <th>Category</th>
-                                                  <th>Description</th>
-                                                 <th>Date</th>
-                                                   <th></th>
-                                                </tr>
-                                          </thead>
-                                     <tbody>
+                                                                             <table class="table">
+                                                                                 <thead>
+                                                                                       <tr>
+                                                                                          <th>Category</th>
+                                                                                          <th>Description</th>
+                                                                                         <th>Date</th>
+                                                                                           <th></th>
+                                                                                        </tr>
+                                                                                  </thead>
+                                                                             <tbody>
             @foreach (var skill in SkillsService.Skills)
             {
-                                                                                                       <tr>
-                                                                                                                                                                                   <td>@skill.Category</td>                                                             
-                                                                                                                                                                                   <td>@skill.Description</td>
-                                                                                                                                                                                   <td>@skill.Date</td>
+                                                                                                                                                                                       <tr>
+                                                                                                                                                                                                                                                                   <td>@skill.Category</td>                                                             
+                                                                                                                                                                                                                                                                   <td>@skill.Description</td>
+                                                                                                                                                                                                                                                                   <td>@skill.Date</td>
 
 
-                                                                                                    <td>
-                                                                                                                                                                                                                                <button class="btn btn-primary">Delete</button>
-                                                                                                                                                                                                                            </td>
-                                                                                                                                                                                 </tr>
+                                                                                                                                                                                    <td>
+                                                                                                                                                                                                                                                                                                                <button class="btn btn-primary">Delete</button>
+                                                                                                                                                                                                                                                                                                            </td>
+                                                                                                                                                                                                                                                                 </tr>
             }
-                                                                                                            </tbody>
-                                                                                                        </table>
+                                                                                                                                                    </tbody>
+                                                                                                                                                </table>
 }
 
 
